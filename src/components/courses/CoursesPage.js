@@ -41,11 +41,13 @@ CoursesPage.propTypes = {
 
 function mapStateToProps(state) {
   //redux state, get data by accessing reducer
+  console.log(state.authorReducer);
   return {
     courses:
       state.authorReducer.length === 0
         ? []
         : state.courseReducer.map((course) => {
+            debugger;
             return {
               ...course,
               authorName: state.authorReducer.find(
